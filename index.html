@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadchodzi - wielkie otwarcie</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <div class="container">
+
+
+    <div class="content">
+  
+        <h1>Wkrótce <span>Wznawiamy</span> Przygode</h1>
+        <div class="launch-time">
+        <div>
+            <p id="Dni">00</p>
+            <span>Dni</span>
+        </div>
+        <div>
+            <p id="Godziny">00</p>
+            <span>Godziny</span>
+        </div>
+        <div>
+            <p id="Minuty">00</p>
+            <span>Minuty</span>
+        </div>
+        <div>
+            <p id="Sekundy">00</p>
+            <span>Sekundy</span>
+        </div>
+        </div>
+
+    </div>
+    </div>
+
+
+    <script>
+
+var countDownDate = new Date("Oct 4, 2024 20:30:00").getTime();
+var x = setInterval(function(){
+    var now = new Date().getTime();
+    var distance = countDownDate - now;
+
+    var Dni = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var Godziny = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var Minuty = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var Sekundy = Math.floor((distance % (1000 * 60)) / 1000);
+
+document.getElementById("Dni").innerHTML = Dni;
+document.getElementById("Godziny").innerHTML = Godziny;
+document.getElementById("Minuty").innerHTML = Minuty;
+document.getElementById("Sekundy").innerHTML = Sekundy;
+
+if(distance < 0){
+    clearInterval(x);
+    document.getElementById("Dni").innerHTML = "00";
+document.getElementById("Godziny").innerHTML = "00";
+document.getElementById("Minuty").innerHTML = "00";
+document.getElementById("Sekundy").innerHTML = "00";
+}
+
+},1000);
+
+    </script>
+
+</body>
+</html>
